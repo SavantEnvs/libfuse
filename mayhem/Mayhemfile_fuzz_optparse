@@ -1,0 +1,9 @@
+project: savantenvs/libfuse
+target: fuzz_optparse
+cmds:
+  - cmd: /mayhem/fuzz_optparse
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuse_optparse.dict
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_optparse/testsuite
